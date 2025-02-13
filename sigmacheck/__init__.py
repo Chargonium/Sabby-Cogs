@@ -8,9 +8,9 @@ class SigmaCheck(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(aliases=["sigma"])
     async def sigmacheck(self, ctx, user: discord.User = None):
-        """Replies with the user's sigma percentage!"""
+        """Gets someone's sigma level"""
         percentage = random.randint(0, 100)
 
         if user:
@@ -37,9 +37,9 @@ class SigmaCheck(commands.Cog):
                 return
         await ctx.send("you're so not sigma that the bot broke ):")
 
-    @commands.command()
+    @commands.command(aliases=["rizz"])
     async def rizzcheck(self, ctx, user: discord.User = None):
-        """Replies with the user's rizz!"""
+        """Gets someone's rizz level!"""
 
         percentage = random.randint(0, 100)
 
