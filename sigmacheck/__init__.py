@@ -12,7 +12,7 @@ class SigmaCheck(commands.Cog):
     async def sigmacheck(self, ctx, user: discord.User = None):
         """Gets someone's sigma level"""
 
-        percentage = random.randint(0, 100)
+        percentage = random.randint(0, 100) # gets the sigma level using a top secret method (definitly not just randomly generated)
 
         if user:
                 
@@ -42,7 +42,7 @@ class SigmaCheck(commands.Cog):
     async def rizzcheck(self, ctx, user: discord.User = None):
         """Gets someone's rizz level!"""
 
-        percentage = random.randint(0, 100)
+        percentage = random.randint(0, 100) # gets the rizz level using a top secret method (definitly not just randomly generated)
 
         if user:
             if percentage >= 75:
@@ -70,7 +70,7 @@ class SigmaCheck(commands.Cog):
     async def vibecheck(self, ctx, user: discord.User = None):
         """Checks someone's vibe"""
         
-        percentage = random.randint(0, 100)
+        percentage = random.randint(0, 100) # gets the vibe level using a top secret method (definitly not just randomly generated)
 
         if user:
                 
@@ -94,7 +94,7 @@ class SigmaCheck(commands.Cog):
             elif percentage < 10:
                 await ctx.send(f"You didn't pass the vibe check")
                 return
-        await ctx.send("you're so not sigma that the bot broke ):")
+        await ctx.send("your vibe is so low that the bot broke ):")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(SigmaCheck(bot))
