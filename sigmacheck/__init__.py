@@ -11,14 +11,15 @@ class SigmaCheck(commands.Cog):
     @commands.command(aliases=["sigma"])
     async def sigmacheck(self, ctx, user: discord.User = None):
         """Gets someone's sigma level"""
+
         percentage = random.randint(0, 100)
 
         if user:
                 
-            if percentage >= 60:
+            if percentage >= 75:
                 await ctx.send(f"Wow, {user.mention} is super sigma with {percentage}%")
                 return
-            elif percentage < 60 and percentage >= 10:
+            elif percentage >= 10:
                 await ctx.send(f"{user.mention} is {percentage}% sigma!")
                 return
             elif percentage < 10:
@@ -26,10 +27,10 @@ class SigmaCheck(commands.Cog):
                 return
 
         else:
-            if percentage >= 60:
+            if percentage >= 75:
                 await ctx.send(f"Wow, you super sigma with {percentage}%")
                 return
-            elif percentage < 60 and percentage >= 10:
+            elif percentage >= 10:
                 await ctx.send(f"You are {percentage}% sigma!")
                 return
             elif percentage < 10:
@@ -44,20 +45,20 @@ class SigmaCheck(commands.Cog):
         percentage = random.randint(0, 100)
 
         if user:
-            if percentage >= 60:
+            if percentage >= 75:
                 await ctx.send(f"{user.mention} is the rizzler with {percentage}%")
                 return
-            elif percentage < 60 and percentage >= 10:
+            elif percentage >= 10:
                 await ctx.send(f"{user.mention} has {percentage}% rizz")
                 return
             elif percentage < 10:
                 await ctx.send(f"{user.mention} has -{percentage}% rizz")
                 return
         else:
-            if percentage >= 60:
+            if percentage >= 75:
                 await ctx.send(f"You're the rizzler with {percentage}%")
                 return
-            elif percentage < 60 and percentage >= 10:
+            elif percentage >= 10:
                 await ctx.send(f"You have {percentage}% rizz")
                 return
             elif percentage < 10:
@@ -65,5 +66,35 @@ class SigmaCheck(commands.Cog):
                 return
         await ctx.send("your rizz is so low the bot broke ):")
 
-async def setup(bot):
+    @commands.command(aliases=["vibe"])
+    async def vibecheck(self, ctx, user: discord.User = None):
+        """Checks someone's vibe"""
+        
+        percentage = random.randint(0, 100)
+
+        if user:
+                
+            if percentage >= 75:
+                await ctx.send(f"{user.mention} passed the vibe check with {percentage}%")
+                return
+            elif percentage >= 10:
+                await ctx.send(f"{user.mention} has {percentage}% vibe!")
+                return
+            elif percentage < 10:
+                await ctx.send(f"{user.mention} didn't pass the vibe check")
+                return
+
+        else:
+            if percentage >= 75:
+                await ctx.send(f"You passed the vibe check with {percentage}%")
+                return
+            elif percentage >= 10:
+                await ctx.send(f"You have {percentage}% vibe!")
+                return
+            elif percentage < 10:
+                await ctx.send(f"You didn't pass the vibe check")
+                return
+        await ctx.send("you're so not sigma that the bot broke ):")
+
+async def setup(bot: commands.Bot):
     await bot.add_cog(SigmaCheck(bot))
